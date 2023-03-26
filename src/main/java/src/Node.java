@@ -2,14 +2,14 @@
 package src;
 
 public class Node <T> {
-    T data; //? generic for blocks
+    public T data; //? generic for blocks
 
     //? blocks dimensions
-    Node<T> right;
-    Node<T> left;
-    Node<T> up;
-    Node<T> down;
-    int x;
+    public Node<T> right;
+    public Node<T> left;
+    public Node<T> up;
+    public Node<T> down;
+    public int x;
 
     public Node(T data,int x){
         //? defining vals
