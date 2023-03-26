@@ -46,9 +46,15 @@ public class MultiDimList<T> {
     }
 
     void addBlockV(Node<Integer> tmp, Node<Integer> n_node) {
-        n_node.left = tmp.left;
-        tmp.left = n_node;
-        n_node.right = tmp;
+        if (head.x > n_node.x) {
+            n_node.left = head;
+            head.right = n_node;
+            head = n_node;
+        } else {
+            n_node.left = tmp.left;
+            tmp.left = n_node;
+            n_node.right = tmp;
+        }
     }
 
     void removeBlockAbove(Node<Integer> n_node) {
@@ -61,8 +67,9 @@ public class MultiDimList<T> {
     }
 
     void controllBlock(Node<Integer> n_node) {
-        //Node<Integer> tmp = n_node;
-        while (n_node.down != null && n_node.down.data == n_node.data) {
+        //!!!!! eğer n_node.down.data.equals(n_node.data) demeyip "==" kullanınca 
+        //!!!!! nedense 128 ve sonrasını karşılaştırmıyor
+        while (n_node.down != null && n_node.down.data.equals(n_node.data)) {
             n_node.down.data *= 2;
             removeBlockAbove(n_node);
             n_node = n_node.down;
