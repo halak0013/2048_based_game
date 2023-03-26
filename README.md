@@ -1,4 +1,5 @@
 # Çoklu Bağlantılı Liste ile Sayı Düşürme Oyunu 
+![resim](https://user-images.githubusercontent.com/75750279/227788717-1ef2ff2c-38aa-4952-a40b-9f7ad70416f3.png)
 
 
 Bizden istenenler: 
