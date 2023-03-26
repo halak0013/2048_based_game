@@ -2,9 +2,9 @@
 package src;
 
 public class MultiDimList<T> {
-    private Node<Integer> head;
+    public Node<Integer> head;
 
-    void addProces(int data, int x) {
+    public void addProces(int data, int x) {
         Node<Integer> n_node = new Node<Integer>(data, x);
         Node<Integer> tmp = head;
 
@@ -68,7 +68,7 @@ public class MultiDimList<T> {
 
     void controllBlock(Node<Integer> n_node) {
         //!!!!! eğer n_node.down.data.equals(n_node.data) demeyip "==" kullanınca 
-        //!!!!! nedense 128 ve sonrasını karşılaştırmıyor
+        //!!!!! çalışmıyor 128 ve öncesini hafıza aynı yerde tutlormuş
         while (n_node.down != null && n_node.down.data.equals(n_node.data)) {
             n_node.down.data *= 2;
             removeBlockAbove(n_node);
